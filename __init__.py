@@ -46,3 +46,6 @@ class Azure:
         self.credentials = AADTokenCredentials(self.mgmt_token, self.client_id)
 
         return self.credentials
+
+    def access_token(self):
+        return self.credentials.token.get('access_token')
