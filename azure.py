@@ -94,7 +94,7 @@ class Azure:
         df_daily_usage['usageEndTime'] = pd.to_datetime(df_daily_usage['usageEndTime'])
         df_daily_usage['usageStartTime'] = pd.to_datetime(df_daily_usage['usageStartTime'])
         
-        df_invoice_daily_usage = df_daily_usage.loc[(df_daily_usage['usageStartTime'] >= reported_start_time) & (df_daily_usage['usageEndTime'] <= reported_end_time)]
+        df_invoice_daily_usage = df_daily_usage.loc[(df_daily_usage['usageStartTime'] >= reported_start_time) & (df_daily_usage['usageStartTime'] <= reported_end_time)]
 
         return df_invoice_daily_usage
 
